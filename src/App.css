@@ -1,7 +1,14 @@
+:root{
+  --bg-color:#000;
+  --primary:#2F243A;
+  --text-color:#fff;
+  --small-text-color:#ffffff81;
+
+}
+
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  color:var(--text-color);
+  
   text-align: center;
 }
 
@@ -39,4 +46,117 @@
 
 .read-the-docs {
   color: #888;
+}
+
+
+.navbar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.4rem;
+  padding: 1rem 2rem;
+  border-bottom: 0.4px solid rgba(255, 255, 255, 0.204);
+}
+
+.nav-logo{
+  font-size: 1.8rem;
+  font-weight: 800;
+}
+
+.nav-list{
+  display: flex;
+  /* justify-content: space-around; */
+  list-style-type: none;
+  gap: 3rem;
+  font-weight:500;
+}
+
+.nav-list li{
+  cursor: pointer;
+}
+
+.main{
+  display: flex;
+  justify-content: center   ;
+}
+
+.main-section{
+  width: 70%;
+}
+.button{
+  margin: 1rem;
+  border-radius: 0.2rem;
+  border: 1px solid #ffffff36;
+  background-color: #000;
+
+}
+
+.big-text{
+  margin-top: 9rem;
+  letter-spacing: -0.1rem;
+}
+.small-text{
+  padding: 0 8rem;
+  margin-top: 1rem;
+  font-size: 1.3em;
+  font-weight: 400;
+  color: var(--small-text-color);
+}
+.menu-icon{
+  display: none;
+}
+
+.button-white{
+  background-color: var(--text-color);
+  color: var(--bg-color);
+}
+
+
+
+
+
+/* NOTES LIST */
+.note-section{
+  display: flex;
+  flex-direction: column;
+ 
+  align-items: center;
+  height: 80vh;
+}
+.note-box{
+  width: 55%;
+  height: 20vh;
+  background-color: #2f2f2fad;
+  padding: 1rem;
+}
+.note-heading{
+  text-align: left;
+  margin-bottom: 0.3rem;
+}
+.note-content{
+  height: 70%;
+  overflow-y:hidden;
+  text-align: left;
+}
+
+
+
+@media screen and (max-width: 760px) {
+  .nav-list li{
+    display: none;
+  }
+
+  .menu-icon{
+    display: block;
+  }
+
+  .small-text{
+    padding: 0;
+  }
+
+  /* NOTE LIST */
+  .note-box{
+    width: 80%;
+    
+  }
 }

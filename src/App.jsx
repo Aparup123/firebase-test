@@ -8,6 +8,7 @@ import Signin from './Signin';
 import UserProfile from './UserProfile';
 import CreateNote from './CreateNote';
 import NoteList from './NoteList';
+import Navbar from './Navbar';
 
 function App() {
   
@@ -18,12 +19,15 @@ function App() {
       setActive(s);
   }
  return<>
- <h1>Welcome</h1>
- <button onClick={()=>setActive("Signup")}>Signup</button>
- <button onClick={()=>setActive("Signin")}>Signin</button>
- <button onClick={()=>setActive("UserProfile")}>User profile</button>
- <button onClick={()=>setActive("CreateNote")}>CreateNote</button>
- <button onClick={()=>setActive("NoteList")}>NoteList</button>
+ <Navbar handleActive={handleActive}/>
+ {active=="App"&&<div className='main'>
+    <section className='main-section'>
+    <h1 className='big-text'>X-Note a Better Notes and Password Manager</h1>
+    <h4 className='small-text'>With x note you can manage your daily notes and generate hard passwords and save it for future</h4>
+    <button className="button button-white" onClick={()=>handleActive("Signup")}>Sign up</button>
+    <button className="button" onClick={()=>handleActive("Signin")}>Sign in</button>
+    </section>
+ </div>}
  {active=="Signup"&&<Signup/>}
  {active=="Signin"&&<Signin/>}
  {active=="UserProfile"&&<UserProfile currentUser={currentUser}/>}
