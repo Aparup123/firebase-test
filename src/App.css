@@ -56,6 +56,11 @@
   font-size: 1.4rem;
   padding: 1rem 2rem;
   border-bottom: 0.4px solid rgba(255, 255, 255, 0.204);
+  position: fixed;
+  width: 100%;
+  height: 4.8rem;
+  top: 0;
+  backdrop-filter: blur(10px);
 }
 
 .nav-logo{
@@ -69,6 +74,7 @@
   list-style-type: none;
   gap: 3rem;
   font-weight:500;
+
 }
 
 .nav-list li{
@@ -78,6 +84,13 @@
 .main{
   display: flex;
   justify-content: center   ;
+  
+  margin-top: 4.8rem;
+}
+
+.center{
+  display: flex;
+  justify-content: center;
 }
 
 .main-section{
@@ -117,17 +130,18 @@
 
 /* NOTES LIST */
 .note-section{
-  display: flex;
-  flex-direction: column;
- 
-  align-items: center;
-  height: 80vh;
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ gap: 1rem;
+ padding: 1rem 2rem;
+ max-width: 1400px;
 }
 .note-box{
-  width: 55%;
+  
   height: 20vh;
   background-color: #2f2f2fad;
   padding: 1rem;
+  border-radius: 1rem;
 }
 .note-heading{
   text-align: left;
@@ -140,11 +154,59 @@
 }
 
 
+/* SIGNIN PAGE */
+
+.auth-form{
+  display: flex inline;
+  flex-direction: column;
+  background-color: #1d1d1d;
+  padding: 4rem 2.5rem;
+  margin-top: 4rem; 
+  text-align: left;
+  border-radius: 0.5rem;
+}
+
+.auth-form label{
+  float: left;
+  width: 15rem;
+}
+.auth-form input{
+    background-color: #1d1d1d;
+    border: 0.5px solid #ffffff5c;
+    padding: 0.5rem;
+    border-radius: 0.4rem;
+    margin: 0.2rem 0;
+    
+
+}
+
+.auth-form button{
+  margin: 1rem 0;
+}
+
+.auth-form h1{
+  margin-bottom: 1rem;
+}
+
+
 
 @media screen and (max-width: 760px) {
-  .nav-list li{
-    display: none;
+  .nav-list{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top:4.8rem;
+    z-index: 2;
+    background-color: #000;
+    width: 100%;
+    padding: 2rem;
+    right: -100% ;
+    transition: 0.3s ease;
   }
+  .nav-list.active{
+    right: 0;
+  }
+
 
   .menu-icon{
     display: block;
@@ -155,8 +217,16 @@
   }
 
   /* NOTE LIST */
-  .note-box{
-    width: 80%;
-    
+  .note-section{
+    grid-template-columns: repeat(2, 1fr);
   }
+
+}
+
+@media screen and (max-width:500px) {
+  .note-section{
+    grid-template-columns: 1fr;
+  }
+
+
 }
