@@ -1,9 +1,12 @@
 import { useEffect, useState } from 'react';
 import {auth, db} from './firebase'
 import { collection, getDoc, getDocs } from 'firebase/firestore'
-export default function NoteList({currentUser}){
+import { AiOutlinePlusCircle } from "react-icons/ai";
+export default function NoteList({currentUser, handleActive, setActive}){
+    // console.log(currentUser);
+    // currentUser=JSON.parse(localStorage.getItem("currentUser"));
+    // currentUser=auth.currentUser;
     console.log(currentUser);
-    currentUser=auth.currentUser;
     const [notes, setNotes]=useState([]);
     
     useEffect(()=>{
@@ -22,7 +25,7 @@ export default function NoteList({currentUser}){
         }
         
         
-    },[currentUser]);
+    },[]);
 
     
         
@@ -91,6 +94,7 @@ Morbi tristique, sapien a lacinia aliquam, lorem diam lobortis elit, vel dictum 
             </div>
         </div>
         </div>
+        <span className='add-note-button' onClick={()=>setActive("CreateNote")}><AiOutlinePlusCircle/></span>
     </>
 }
 

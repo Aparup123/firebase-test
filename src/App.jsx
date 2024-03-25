@@ -40,8 +40,8 @@ function App() {
  {active=="Signup"&&<Signup handleActive={handleActive} currentUser={currentUser} setCurrentUser={setCurrentUser}/>}
  {active=="Signin"&&<Signin handleActive={handleActive} msetCurrentUser={msetCurrentUser}/>}
  {active=="UserProfile"&&<UserProfile currentUser={currentUser}/>}
- {active=="CreateNote"&&<CreateNote currentUser={currentUser}/>}
- {active=="NoteList"&&<NoteList currentUser={currentUser}/>}
+ {active=="CreateNote"&&<CreateNote currentUser={currentUser} setActive={setActive}/>}
+ {active=="NoteList"&&<NoteList currentUser={currentUser} handleActive={handleActive} setActive={setActive}/>}
  
  </>
 }

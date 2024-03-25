@@ -14,7 +14,10 @@ export default function Signup({handleActive, currentUser, msetCurrentUser}){
       signInWithEmailAndPassword(auth, userEmail, userPassword).then((usr)=>{
         console.log("User signed in");
         console.log(usr.user.email);
-        msetCurrentUser(usr.user.email);
+        // localStorage.setItem("currentUser", JSON.stringify(usr.user));
+        
+        console.log(currentUser);
+      handleActive("NoteList");
       }).catch((e)=>{
         console.log(e);
       })
@@ -23,9 +26,8 @@ export default function Signup({handleActive, currentUser, msetCurrentUser}){
       // while(currentUser==null){
 
       // }
-      handleActive("App");
-      console.log(currentUser);
-      handleActive("NoteList");
+      
+      
   
     }
   

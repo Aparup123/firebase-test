@@ -5,6 +5,7 @@ export default function UserProfile({currentUser}){
     function userSignout(){
         signOut(auth).then(()=>{
             console.log("Successfully signed out");
+            localStorage.setItem("currentUser", null);
         }).catch((e)=>{
             console.log(e);
         });

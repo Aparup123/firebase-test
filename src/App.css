@@ -153,6 +153,89 @@
   text-align: left;
 }
 
+.add-note-button{
+  position: fixed;
+  font-size: 3rem;
+  bottom: 1rem;
+  right: 4rem;border-radius: 100%;
+ 
+  
+  background-blend-mode: multiply;
+}
+
+/* CREATE NOTE */
+.create-note-main{
+  display: flex;
+  justify-content: center;
+  height: 89vh;
+}
+
+.create-note-form{
+  border-radius: 0.5rem;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  background-color: #4e4e4e56;
+  width: 70%;
+  height: 80%;
+
+}
+.create-note-header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.create-note-save-icon{
+  padding: 0;
+  all:unset;
+  font-size: 1.5rem;
+  margin-right:1rem ;
+  margin-top:1rem ;
+  color: rgb(33, 134, 196);
+}
+.create-note-save-icon:focus{
+  outline:0;
+  border: 0;
+}
+.create-note-heading{
+  font-size: 1.7rem;
+  line-height: 2rem;  
+  border: 0;
+  padding: 1rem 1rem 0.4rem;
+  background-color: transparent;
+  outline: 0;
+  width: 85%;
+}
+.create-note-heading::after{
+  outline: 0  ;
+}
+.create-note-heading:focus{
+  border: 0;
+  outline: 0;
+}
+.create-note-form hr{
+  margin: 0 0.8rem;
+}
+.create-note-content{
+  height: 80%;
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  background-color: transparent;
+  border: 0;
+  resize: none;
+}
+
+/* .create-note-form button{
+  margin-top:0.5rem;
+  width: 20%;
+  display: inline;
+} */
+
+.create-note-content:focus{
+  outline: 0;
+  border: 0 ;
+}
 
 /* SIGNIN PAGE */
 
@@ -228,5 +311,10 @@
     grid-template-columns: 1fr;
   }
 
+  /* CREATE NOTE */
+  .create-note-form{
+    width: 90%;
+  
+  }
 
 }

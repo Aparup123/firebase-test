@@ -14,7 +14,8 @@ export default function Signup({handleActive, setCurrentUser}){
       createUserWithEmailAndPassword(auth, userEmail, userPassword).then((usr)=>{
         console.log("User created successfully");
         console.log(usr.user.email);
-        setCurrentUser(usr.user.email);
+        // setCurrentUser(usr.user.email);
+        localStorage.setItem("currentUser", JSON.stringify(usr.user));
         const docRef=doc(db, "users", usr.user.email);
         setDoc(docRef,{
             email:usr.user.email,
@@ -23,6 +24,8 @@ export default function Signup({handleActive, setCurrentUser}){
         }).catch((e)=>{
             console.log(e);
         })
+
+        handleActive("NoteList");
       }).catch((e)=>{
         console.log(e);
       })
